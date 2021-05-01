@@ -1,6 +1,6 @@
 #  Fluent Bit - Data Observability Platform
 
-![ Show image of grafana dashboard using supported Prometheus metric types](https://github.com/neiman-marcus/fluent-bit-out-prometheus-metrics/out-prometheus-metrics-dashboard.png "Demo grafana dashboard showing supported Prometheus metric types")
+![ Show image of grafana dashboard using supported Prometheus metric types](https://github.com/neiman-marcus/fluent-bit-data-observability-platform/blob/staging/out-prometheus-metrics-dashboard.png "Demo grafana dashboard showing supported Prometheus metric types")
 
 
 ## Purpose
