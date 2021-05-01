@@ -1,0 +1,7 @@
+groups:
+  - name: example
+    rules:
+    - record: fluentbit_origin_alert_warning
+      expr: topk(40, sum(rate(fluentbit_origin_total[5m])) by (origin, method))
+    - record: fluentbin_origin_alert_critical
+      expr: topk(20,fluentbit_origin_alert_warning)

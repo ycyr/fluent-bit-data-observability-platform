@@ -1,0 +1,10 @@
+groups:
+- name: syslog
+  rules:
+  - alert: HighRequestRate
+    expr: rate(fluentbit_origin_total[5m]) > 0.015
+    for: 1m
+    labels:
+      severity: origin
+    annotations:
+      summary: High request rate

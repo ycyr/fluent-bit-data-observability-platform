@@ -1,0 +1,60 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 23,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "content": "# Local URLs\n\nPrometheus Expression Browser\n[http://localhost:9090/graph](http://localhost:9090/graph)\n<br>\nPushGateway\n[http://localhost:9091/](http://localhost:9091/)\n<br>\nAlertManager\n[http://localhost:9093/](http://localhost:9093/)\n\n# Upstream projects\nhttps://fluentbit.io/\n<br>\nhttps://grafana.com/oss/grafana/\n<br>\nhttps://grafana.com/oss/loki/\n<br>\nhttps://prometheus.io/\n<br>\nhttps://prometheus.io/docs/alerting/latest/alertmanager/\n<br>\nhttps://github.com/prometheus/pushgateway/\n\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "7.5.3",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Links",
+      "type": "text"
+    }
+  ],
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Data Observability Dashboard",
+  "uid": "3k7b4xrMk",
+  "version": 2
+}

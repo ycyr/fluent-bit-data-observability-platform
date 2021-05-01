@@ -1,0 +1,114 @@
+version: '3'
+
+networks:
+  grafana_net:
+    driver: bridge
+
+volumes:
+  prometheus_data: {}
+  pushgateway_data: {}
+  alertmanager_data: {}
+  grafana_data: {}
+
+services:
+  pushgateway:
+    image: prom/pushgateway:v1.4.0
+    container_name: pushgateway
+    command:
+      - "--web.enable-admin-api"
+      - "--web.enable-lifecycle"
+      - "--web.listen-address=0.0.0.0:9091"
+      - "--persistence.file=/pushgateway/persistence"
+      - "--persistence.interval=5m"
+      - "--log.level=info"
+      - "--log.format=json"
+    volumes:
+      - pushgateway_data:/pushgateway
+    ports:
+      - "9091:9091"
+    networks:
+      - grafana_net
+
+  fluent-bit:
+    build: ./fluent-bit
+    container_name: fluent-bit
+    volumes:
+      - ./fluent-bit/conf:/fluent-bit/etc
+    depends_on:
+      - loki
+      - pushgateway
+    ports:
+      - "1514:1514"
+      - "1514:1514/udp"
+    networks:
+      - grafana_net
+
+  loki:
+    image: grafana/loki:2.2.1
+    container_name: loki
+    ports:
+      - "3100:3100"
+    networks:
+      - grafana_net
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./loki/conf:/etc/loki
+
+  nlog:
+    build: ./nlog
+    container_name: nlog
+    depends_on:
+      - fluent-bit
+    networks:
+      - grafana_net
+
+  grafana:
+    image: grafana/grafana:7.5.3
+    container_name: grafana
+    env_file:
+      - ./grafana/config.env
+    depends_on:
+      - prometheus
+      - loki
+    ports:
+      - "3000:3000"
+    networks:
+      - grafana_net
+    volumes:
+      - ./grafana:/etc/grafana
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/plugins:/var/lib/grafana/plugins
+
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    container_name: prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+    depends_on:
+      - pushgateway
+      - alertmanager
+    networks:
+      - grafana_net
+
+  alertmanager:
+    image: prom/alertmanager:v0.21.0
+    container_name: alertmanager
+    volumes:
+      - ./alertmanager:/etc/alertmanager
+      - alertmanager_data:/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+    expose:
+      - 9093
+    ports:
+      - 9093:9093
+    networks:
+      - grafana_net
