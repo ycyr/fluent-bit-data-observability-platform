@@ -22,7 +22,9 @@ debugging configurations prior to deploying into production
 * Grafana dashboard development sandbox environment
 * Develop and test custom Fluent Bit configurations
 
-**Reference Talk:** [FluentCon 2021: Fluent Bit - Swiss Army Tool of Observability Data Ingestion](https://sched.co/iKok)
+**Reference Talk:** 
+* [FluentCon 2021: Fluent Bit - Swiss Army Tool of Observability Data Ingestion](https://sched.co/iKok)
+* [Fluent Bit Prometheus Metrics Output Plugin](https://github.com/neiman-marcus/fluent-bit-out-prometheus-metrics)
 
 My hope is that the wider community will find this equally useful.
 
