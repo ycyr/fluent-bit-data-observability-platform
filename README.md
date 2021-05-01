@@ -25,6 +25,7 @@ debugging configurations prior to deploying into production
 **Reference Talk:** 
 * [FluentCon 2021: Fluent Bit - Swiss Army Tool of Observability Data Ingestion](https://sched.co/iKok)
 * [Fluent Bit Prometheus Metrics Output Plugin](https://github.com/neiman-marcus/fluent-bit-out-prometheus-metrics)
+  * Note: fluent-bit-out-prometheus-metrics contains subset of the docker-compose environment found in this project.  If you were to run both, there would be port conflicts with the pushgateway container.
 
 My hope is that the wider community will find this equally useful.
 
@@ -49,7 +50,7 @@ make all
 make build
 ```
 
-### Start Prometheus Push Gateway and Fluent bit
+### Start platform
 ```
 make start
 ```
@@ -66,7 +67,7 @@ Execute repeatedly to see the latest container logs
 make logs
 ```
 
-### Stop both containers
+### Stop platform
 Shutdown demo environment.
 ```
 make stop
@@ -74,9 +75,15 @@ make stop
 
 ### Persistent Storage
 The docker-compose.yml file is configured for persistent storage.
-To disable this, consider using docker-compose-non_persistent.yml.  Copy the desired version to docker-compose.yml and re-run: 
+To disable this, consider using docker-compose-ephemeral.yml.  Copy the desired version to docker-compose.yml and re-run: 
 ```
 make build
+```
+
+### Full restart
+For occasions when changes don't seem to be taking effect.
+```
+make full-restart
 ```
 
 ---
