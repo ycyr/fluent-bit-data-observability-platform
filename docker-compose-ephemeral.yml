@@ -66,6 +66,7 @@ services:
       - grafana_net
     volumes:
       - ./grafana:/etc/grafana
+      - ./grafana/data:/usr/share/grafana/data
       - ./grafana/provisioning/plugins:/var/lib/grafana/plugins
 
   prometheus:

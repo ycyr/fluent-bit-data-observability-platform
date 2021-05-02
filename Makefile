@@ -1,4 +1,4 @@
-all: build start logs wait show-metrics
+all: build start wait message
 
 clean:
 	rm -rf *.so *.h *~
@@ -12,6 +12,8 @@ start:
 stop:
 	docker-compose down
 
+full-restart: stop start
+
 logs:
 	docker-compose logs
 
@@ -22,4 +24,7 @@ show-metrics:
 	curl -s http://localhost:9091/metrics | grep fluentbit
 
 wait:
-	sleep 2
+	@sleep 2
+
+message:
+	@echo "Open Grafana with http://127.0.0.1:3000/"
