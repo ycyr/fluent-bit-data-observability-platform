@@ -3,7 +3,7 @@
 
 #  Fluent Bit - Data Observability Platform
 
-![ Show image of grafana dashboard using supported Prometheus metric types](https://github.com/neiman-marcus/fluent-bit-data-observability-platform/blob/staging/out-prometheus-metrics-dashboard.png "Demo grafana dashboard showing supported Prometheus metric types")
+![ Show image of grafana dashboard using supported Prometheus metric types](https://github.com/ycyr/fluent-bit-data-observability-platform/blob/master/out-prometheus-metrics-dashboard.png "Demo grafana dashboard showing supported Prometheus metric types")
 
 
 ## Purpose
@@ -132,9 +132,9 @@ https://prometheus.io/
 
 ## Conduct / Contributing / License
 
-* Refer to our contribution guidelines to contribute to this project. See [CONTRIBUTING.md](https://github.com/neiman-marcus/nmg-sonarqube/tree/master/CONTRIBUTING.md).
-* All contributions must follow our code of conduct. See [CONDUCT.md](https://github.com/neiman-marcus/nmg-sonarqube/tree/master/CONDUCT.md).
-* This project is licensed under the Apache 2.0 license. See [LICENSE](https://github.com/neiman-marcus/nmg-sonarqube/tree/master/LICENSE).
+* Refer to our contribution guidelines to contribute to this project. See [CONTRIBUTING.md](https://github.com/ycyr/fluent-bit-data-observability-platform/tree/master/CONTRIBUTING.md).
+* All contributions must follow our code of conduct. See [CONDUCT.md](https://github.com/ycyr/fluent-bit-data-observability-platform/tree/master/CONDUCT.md).
+* This project is licensed under the Apache 2.0 license. See [LICENSE](https://github.com/ycyr/fluent-bit-data-observability-platform/tree/master/LICENSE).
 
 ## Acknowledgments
 Thank you to the teams who create and maintain the individual projects listed above.
