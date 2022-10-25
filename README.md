@@ -27,7 +27,7 @@ debugging configurations prior to deploying into production
 
 **Reference Talk:** 
 * [FluentCon 2021: Fluent Bit - Swiss Army Tool of Observability Data Ingestion](https://sched.co/iKok)
-* [Fluent Bit Prometheus Metrics Output Plugin](https://github.com/neiman-marcus/fluent-bit-out-prometheus-metrics)
+* [Fluent Bit Prometheus Metrics Output Plugin](https://github.com/ycyr/fluent-bit-out-prometheus-metrics)
   * Note: fluent-bit-out-prometheus-metrics contains subset of the docker-compose environment found in this project.  If you were to run both, there would be port conflicts with the pushgateway container.
 
 My hope is that the wider community will find this equally useful.
