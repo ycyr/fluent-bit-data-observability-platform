@@ -1,3 +1,6 @@
+### This project orignally was developped by Michael Marshall, unfortunately the original repo is not longer available, this is a copy
+
+
 #  Fluent Bit - Data Observability Platform
 
 ![ Show image of grafana dashboard using supported Prometheus metric types](https://github.com/neiman-marcus/fluent-bit-data-observability-platform/blob/staging/out-prometheus-metrics-dashboard.png "Demo grafana dashboard showing supported Prometheus metric types")
